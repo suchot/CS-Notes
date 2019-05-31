@@ -59,6 +59,25 @@ private void swap(int[] nums, int i, int j) {
 }
 ```
 
+```python
+# -*- coding:utf-8 -*-
+class Solution:
+    # 这里要特别注意~找到任意重复的一个值并赋值到duplication[0]
+    # 函数返回True/False
+    def duplicate(self, numbers, duplication):
+        # write code here
+        if not numbers:
+            return False
+        i = 0
+        for i in range(0, len(numbers)):
+            while numbers[i] != i
+                if numbers[i] == numbers[numbers[i]]:
+                    duplication[0] = numbers[i]
+                    return True
+
+                numbers[i], number[number[i]] = number[number[i]], numbers[i]
+        return False
+```
 # 4. 二维数组中的查找
 
 [NowCoder](https://www.nowcoder.com/practice/abc3fe2ce8e146608e868a70efebf62e?tpId=13&tqId=11154&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)

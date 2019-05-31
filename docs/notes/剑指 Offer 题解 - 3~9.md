@@ -59,6 +59,28 @@ private void swap(int[] nums, int i, int j) {
 }
 ```
 
+[python代码](../offer/数组中重复的数字.py)
+```python
+class Solution:
+    # 这里要特别注意~找到任意重复的一个值并赋值到duplication[0]
+    # 函数返回True/False
+    def duplicate(self, numbers, duplication):
+        # write code here
+        if not numbers:
+            return False
+        for i in range(0, len(numbers)):
+            while numbers[i] != i:
+                if numbers[i] == numbers[numbers[i]]:
+                    duplication[0] = numbers[i]
+                    return True
+                self.swap(numbers, i, numbers[i])
+        return False
+    def swap(self, nums, i, j):
+        temp = nums[i]
+        nums[i] = nums[j]
+        nums[j] = temp
+```
+
 # 4. 二维数组中的查找
 
 [NowCoder](https://www.nowcoder.com/practice/abc3fe2ce8e146608e868a70efebf62e?tpId=13&tqId=11154&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
@@ -106,7 +128,29 @@ public boolean Find(int target, int[][] matrix) {
     return false;
 }
 ```
-
+[二维数组查找](..\offer\二维数组查找.py)
+```python
+# -*- coding:utf-8 -*-
+class Solution:
+    # array 二维列表
+    def Find(self, target, array):
+        # write code here
+        if not array:
+            return False
+        cols, rows = len(array[0]), len(array)
+        row, col = 0, cols-1
+        while True:
+            if col <0 or row >= rows:
+                return False
+                break
+            if array[row][col]==target:
+                return True
+            elif array[row][col]>target:
+                col -= 1
+            else:
+                row += 1
+        return False
+```
 # 5. 替换空格
 
 [NowCoder](https://www.nowcoder.com/practice/4060ac7e3e404ad1a894ef3e17650423?tpId=13&tqId=11155&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
@@ -155,6 +199,35 @@ public String replaceSpace(StringBuffer str) {
     return str.toString();
 }
 ```
+[替换空格](../offer/替换空格.py)
+```python
+# -*- coding:utf-8 -*-
+class Solution:
+    # s 源字符串
+    def replaceSpace(self, s):
+        # write code here
+        new_s = list(s)
+        lens = len(new_s)
+        space_num = 0
+        for i in s:
+            if i == ' ':
+                space_num += 1
+        res = [i for i in range(lens+ 2*space_num)]
+        q, p = lens-1, len(res)-1
+        while q>=0:
+            if new_s[q] == ' ':
+                res[p] = '0'
+                res[p-1] = '2'
+                res[p-2] = '%'
+                p = p-3
+                q = q-1
+            else:
+                res[p] =new_s[q]
+                p -= 1
+                q -= 1
+        res = ''.join(res)
+        return res
+```
 
 # 6. 从尾到头打印链表
 
@@ -182,7 +255,17 @@ public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
     return ret;
 }
 ```
-
+[递归python](../offer/从尾到头打印链表.py)
+```python
+class Solution:
+    # 返回从尾部到头部的列表值序列，例如[1,2,3]
+    def printListFromTailToHead1(self, listNode):
+        res = []
+        if listNode:
+            res.extend(self.printListFromTailToHead1(listNode.next))
+            res.append(listNode.val)
+        return res
+```
 ### 使用头插法
 
 使用头插法可以得到一个逆序的链表。
