@@ -128,7 +128,7 @@ public boolean Find(int target, int[][] matrix) {
     return false;
 }
 ```
-[二维数组查找](..\offer\二维数组查找.py)
+[二维数组查找](../offer/二维数组查找.py)
 ```python
 # -*- coding:utf-8 -*-
 class Solution:
@@ -297,6 +297,28 @@ public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
     return ret;
 }
 ```
+[头插法 python](../offer/从尾到头打印链表.py)
+
+```python
+class Solution:
+    def printListFromTailToHead2(self, listNode):
+        if not listNode:
+            return []
+        dummy = ListNode(-1)
+        while listNode:
+            temp = listNode.next
+            listNode.next = dummy.next
+            dummy.next = listNode
+            listNode = temp
+
+        res = []
+        dummy = dummy.next
+        while dummy:
+            res.append(dummy.val)
+            dummy = dummy.next
+        return res
+
+```
 
 ### 使用栈
 
@@ -317,7 +339,25 @@ public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
     return ret;
 }
 ```
+[使用栈 python](../offer/从尾到头打印链表.py)
 
+
+```python
+class Solution:
+
+    def printListFromTailToHead3(self, listNode):
+        # write code here
+        l = []
+        if not listNode:
+            return []
+        while listNode:
+            l.append(listNode.val)
+            listNode = listNode.next
+        res = []
+        while l:
+            res.append(l.pop())
+        return res
+```
 # 7. 重建二叉树
 
 [NowCoder](https://www.nowcoder.com/practice/8a19cbe657394eeaac2f6ea9b0f6fcf6?tpId=13&tqId=11157&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
