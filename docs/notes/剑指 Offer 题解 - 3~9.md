@@ -396,7 +396,24 @@ private TreeNode reConstructBinaryTree(int[] pre, int preL, int preR, int inL) {
     return root;
 }
 ```
+[重建二叉树 python](../offer/重建二叉树.py )
 
+```python
+class Solution:
+    # 返回构造的TreeNode根节点
+    def reConstructBinaryTree(self, pre, tin):
+        # write code here
+        if not pre:
+            return None
+        if len(pre) == 1:
+            return TreeNode(pre[0])
+        else:
+            root = TreeNode(pre[0])
+            pin = tin.index(pre[0])
+            root.left = self.reConstructBinaryTree(pre[1:pin+1], tin[:pin])
+            root.right = self.reConstructBinaryTree(pre[pin+1:], tin[pin+1:])
+        return root
+```
 # 8. 二叉树的下一个结点
 
 [NowCoder](https://www.nowcoder.com/practice/9023a0c988684a53960365b889ceaf5e?tpId=13&tqId=11210&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
@@ -447,7 +464,26 @@ public TreeLinkNode GetNext(TreeLinkNode pNode) {
     return null;
 }
 ```
+[python 二叉树的下一个节点](../offer/二叉树的下一个结点.py)
 
+```python
+class Solution:
+    def GetNext(self, pNode):
+        # write code here
+        if pNode.right:
+            node = pNode.right
+            while node.left:
+                node = node.left
+            return node
+        else:
+            while pNode.next:
+                parent = pNode.next
+                if parent.left == pNode:
+                    return parent
+                else:
+                    pNode = parent
+            return None
+```
 # 9. 用两个栈实现队列
 
 [NowCoder](https://www.nowcoder.com/practice/54275ddae22f475981afa2244dd448c6?tpId=13&tqId=11158&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
@@ -482,8 +518,26 @@ public int pop() throws Exception {
 }
 ```
 
+[两个栈构造队列, python](../offer/两个栈构造队列.py)
 
-
+```python
+# -*- coding:utf-8 -*-
+class Solution:
+    def __init__(self):
+        # 不能用self.in 命名　会报错。　莫名奇妙
+        self.in1 = []
+        self.out = []
+    def push(self, node):
+        # write code here
+        self.in1.append(node)
+    def pop(self):
+        # return xx
+        if self.out==[]:
+            while self.in1:
+                self.out.append(self.in1.pop())
+            return self.out.pop()
+        return self.out.pop(
+```
 
 
 </br><div align="center">💡 </br></br> 更多精彩内容将发布在公众号 **CyC2018**，公众号提供了该项目的离线阅读版本，后台回复"下载" 即可领取。也提供了一份技术面试复习思维导图，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复"资料" 即可领取。我基本是按照这个思维导图来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据思维导图上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。</div></br>
