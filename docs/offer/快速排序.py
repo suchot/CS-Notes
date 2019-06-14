@@ -23,11 +23,10 @@ class Solution:
         small += 1
         self.swap(array, small, end)
         return small 
-
     def swap(self, array, a, b):
         array[a], array[b] = array[b], array[a]
 if __name__ == "__main__":
-    array = [4]
+    array = [4,1,2,3,5,6,7,1,4,64,2,23]
     S = Solution()
     print(S.quicksort(array))
         
