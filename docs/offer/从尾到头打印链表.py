@@ -33,7 +33,7 @@ class Solution:
             
             
 
-# 递归法
+# 栈法
     def printListFromTailToHead3(self, listNode):
         # write code here
         l = []
