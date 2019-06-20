@@ -10,6 +10,7 @@ class Solution:
                     numbers[j], numbers[j+1] = numbers[j+1], numbers[j]
         res = ''.join(list(map(str, numbers))).lstrip('0')
         return res or '0'
+　   # 这道题主要是定义一个比较函数
     def compare(self, str1, str2):
         s1 = str(str1) +str(str2)
         s2 = str(str2) + str(str1)
