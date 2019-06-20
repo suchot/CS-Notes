@@ -1,3 +1,13 @@
+import collections
+
+# class Solution(object):
+    
+    # def heapsort(self, num):
+    #     return num
+    # def swap(array, i, j):
+    #     array[i], array[j] = array[j], array[i]
+    #     return array
+    # def 
 def swap_param(L, i, j):
     L[i], L[j] = L[j], L[i]
     return L
@@ -36,8 +46,8 @@ def heap_sort(L):
 
 
 def main():
-    L = deque([50, 16, 30, 10, 60,  90,  2, 80, 70])
-    L.appendleft(0)
+    L = collections.deque([50, 16, 30, 10, 60,  90,  2, 80, 70])
+    # L.appendleft(0)
     print heap_sort(L)
 
 
