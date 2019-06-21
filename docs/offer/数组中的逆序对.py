@@ -28,3 +28,6 @@ class Solution:
         else:
             merged.extend(left)
         return merged
+
+if __name__ == "__main__":
+    pass
