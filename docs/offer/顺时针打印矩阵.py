@@ -27,3 +27,7 @@ class Solution:
             c1 += 1 
             c2 -= 1
         return res
+if __name__ == "__main__":
+    matrix = [[3],[2]]
+    S = Solution()
+    print(S.printMatrix(matrix))
