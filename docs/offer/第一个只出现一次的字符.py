@@ -6,10 +6,10 @@ class Solution:
             return -1
         dict_s = {}
         for i in s:
-            dict_s[i] = dict_s.get(i, 0) + 1
-        for i in range(len(s)):
-            if dict_s[s[i]]==1:
-                return i
+            dict_s[i]  = dict_s.get(i, 0) + 1
+        for index, i in enumerate(s):
+            if dict_s[i]==1:
+                return index
         return -1
     def FirstNotRepeatingChar(self, s):
         if not s:
