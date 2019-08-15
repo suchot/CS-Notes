@@ -7,9 +7,8 @@ class Solution:
         return self.quicksortCore(array, start, end)
     def quicksortCore(self, array, start, end):
         index = self.partition(array, start, end)
-        if index > start:
+        if start<end:
             self.quicksortCore(array, start, index-1)
-        if index < end:
             self.quicksortCore(array, index+1, end)
         return array
     def partition(self, array, start, end):

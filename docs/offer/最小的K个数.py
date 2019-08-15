@@ -18,6 +18,13 @@ class TopKheap(object):
             k -= 1
         return res
 class Solution:
+    def GetLeastNumbers_Solution3(self, tinput, k):
+        # write code here
+        # 利用已知函数得到最小的ｋ个树
+        if k>len(tinput):
+            return []
+        tinput = map(lambda x:-x, tinput)
+        return map(lambda x:-x, heapq.nlargest(k, tinput))
     # 通过大顶堆来得到最小的几个数
     def GetLeastNumbers_Solution2(self, tinput, k):
         # write code here

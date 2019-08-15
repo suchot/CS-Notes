@@ -22,6 +22,24 @@ class Solution:
         else:
             res.extend(left[l_start:])
         return res
+    def mergesort(num,start, end):
+        if start<end:
+            mid = start+ ((end-start)>>1)
+            left = self.mergesort(num, start, mid)
+            right = self.mergesort(num, mid+1, end)
+            self.merge(left, right)
+    def merge(self, left, right):
+        merged = []
+        while left and right:
+            if left[0]<right[0]:
+                merged.append(left.pop(0))
+            else:
+                merged.append(right.pop(0))
+        if left:
+            merged.extend(left)
+        if right:
+            merged.extend(right)
+        return merged
 if __name__ == "__main__":
     array = [4,5,-7,1,2,3]
     S = Solution()
