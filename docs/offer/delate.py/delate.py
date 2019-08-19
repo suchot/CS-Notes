@@ -8,4 +8,3 @@ if __name__ == "__main__":
         word = str(sys.stdin.readline().strip())
         if word == word[::-1]:
             count += 1
-    return count
