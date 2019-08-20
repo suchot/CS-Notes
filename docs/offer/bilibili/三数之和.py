@@ -21,8 +21,3 @@ class Solution:
                     while i < j and nums[i] == nums[i - 1]: i += 1
                     while i < j and nums[j] == nums[j + 1]: j -= 1
         return res
-
-作者：jyd
-链接：https://leetcode-cn.com/problems/3sum/solution/3sumpai-xu-shuang-zhi-zhen-yi-dong-by-jyd/
-来源：力扣（LeetCode）
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
