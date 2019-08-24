@@ -23,3 +23,16 @@ if __name__ == "__main__":
     n,arr,aim = 5, [2, 3, 5, 7, 10], 1000
 
     print(S.changecoin(arr, aim))
+
+# 能通过的代码 python 时间复杂度高
+# def count_way(arr, n):
+#     # 第0位是辅助位，代表面额数刚好等于金钱数的一种情况
+#     dp = [1] + [0]*n               # 不用任意面额的组合数
+#     for num in arr:
+#         for j in range(num, n+1):
+#             dp[j] += dp[j-num]
+#     return dp[-1]%(1000000007)
+# _,n = list(map(int, input().split(' ')))
+# arr = list(map(int, input().split(' ')))
+# print(count_way(arr, n))
+# #
