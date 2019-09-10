@@ -34,7 +34,7 @@ def heap_adjust(L, start, end):
 def heap_sort(L):
     L_length = len(L) - 1
 
-    first_sort_count = L_length / 2
+    first_sort_count = L_length // 2
     for i in range(first_sort_count):
         heap_adjust(L, first_sort_count - i, L_length)
 
@@ -48,7 +48,7 @@ def heap_sort(L):
 def main():
     L = collections.deque([50, 16, 30, 10, 60,  90,  2, 80, 70])
     # L.appendleft(0)
-    print heap_sort(L)
+    print (heap_sort(L))
 
 
 if __name__ == '__main__':

@@ -24,8 +24,8 @@ class Solution:
 
         # 如果左子树不为空，将当前root加到左子树链表
         if left:
-            p.right = pRootOfTree
             pRootOfTree.left = p
+            p.right = pRootOfTree
 
         # 将右子树构造成双链表，返回链表头
         right = self.Convert(pRootOfTree.right)
@@ -34,7 +34,9 @@ class Solution:
             pRootOfTree.right = right
 
         # 如果右子树不为空，将该链表追加到root结点之后
-
+        
+        
+        #很关键 最后返回得是最左侧得头节点
         if left:
             return left
         else:

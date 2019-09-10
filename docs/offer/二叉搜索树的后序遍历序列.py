@@ -10,7 +10,7 @@ class Solution:
             return True
         root_val = sequence[end]
         cutindex = start
-        while (cutindex <end and sequence[cutindex] < root_val):
+        while (cutindex < end and sequence[cutindex] < root_val):
             cutindex += 1
         for i in range(cutindex, end):
             if sequence[i] < root_val:

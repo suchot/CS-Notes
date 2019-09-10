@@ -29,11 +29,11 @@ class Solution:
             res.append(minNum)
 
             # 前进的步伐还是很小的，没一个数都考虑到了
-            while res[t2] * 2 <= minNum:
+            if res[t2] * 2 <= minNum:
                 t2 += 1
-            while res[t3] * 3 <= minNum:
+            if res[t3] * 3 <= minNum:
                 t3 += 1
-            while res[t5] * 5 <= minNum:
+            if res[t5] * 5 <= minNum:
                 t5 += 1
 
             nextdex += 1
