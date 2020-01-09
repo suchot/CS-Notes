@@ -10,9 +10,7 @@ class Solution:
         for i in range(len_s):
             if self.str[ord(s[i])] != -1 and self.str[ord(s[i])] >= start:
                     max_len = max(max_len, i- start)
-                    start = self.str[ord(s[i])] + 1
-            self.str[ord(s[i])] = i
-                
+                    start = self.str[ord(s[i])] + 1       
             self.str[ord(s[i])] = i
         max_len = max(max_len, len_s - start)
         return max_len

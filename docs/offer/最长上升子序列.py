@@ -30,7 +30,7 @@ class Solution(object):
         if left==right:
             return left
         while left<right:
-            mid=(left+right)/2
+            mid=(left+right)//2
             if mid==left or mid==right:
                 if number>a[left]:
                     return right
@@ -44,6 +44,6 @@ class Solution(object):
 
 if __name__ == "__main__":
     S = Solution()
-    num = [1,2,3,4,5]
+    num = [4,2,3,4,5]
     print(S.lengthOfLIS(num))
         

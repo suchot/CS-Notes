@@ -19,6 +19,6 @@ class Solution:
 if __name__ == "__main__":
     S = Solution()
     numbers = [2, 3, 1, 0, 2, 5]
-    d = []
+    d = [0]
     print(S.duplicate(numbers,d))
     print(d[0])

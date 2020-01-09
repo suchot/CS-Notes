@@ -4,10 +4,10 @@ class Solution():
             return 0
         dp = [[0 for i in range(aim+1)] for j in range(len(arr))]
         for i in range(len(arr)):
-            dp[i][0]=1
+            dp[i][0]=1 #组成钱0的方法数
         j=1
         while arr[0]*j<=aim:
-            dp[0][j*arr[0]]=1 # 只用货币0一种时的可以达到的钱的方法数
+            dp[0][j*arr[0]]=1 # 只用货币0一种时的可以达到的钱的方法数 注意是方法数
             j +=1
         for i in range(1, len(arr)):
             for j in range(1, aim+1):
